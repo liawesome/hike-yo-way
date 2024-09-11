@@ -4,14 +4,10 @@ Hike-yo-way
 
 ## Overview
 
-What is your app? Give a brief description in a couple of sentences.
-
 Hike-yo-way( Hike your way) is a place for hiking enthusiasts to discover personalized hiking trails based on their feelings, favorite views, and past experiences through AI-powered algorthim.
 
 
 ### Problem Space
-
-Why is your app needed? Give any background information around any pain points or other reasons.
 
 While existing hiking apps offer search functionality based on explicit trail attributes (distance, elevation gain, difficulty, etc.), users often find the process time-consuming and may struggle to find trails that truly match their preferences. Hike-yo-way addresses this by:
 
@@ -23,8 +19,6 @@ While existing hiking apps offer search functionality based on explicit trail at
 
 ### User Profile
 
-Who will use your app? How will they use it? Add any special considerations that your app must take into account.
-
 - Hiking enthusiasts of all levels
 - Users seeking trails based on their current mood or desired scenery
 - Travelers looking for hiking options in new locations
@@ -32,9 +26,6 @@ Who will use your app? How will they use it? Add any special considerations that
 
 
 ### Features
-
-List the functionality that your app will include. These can be written as user stories or descriptions with related details. Do not describe _how_ these features are implemented, only _what_ needs to be implemented.
-
 
 User Authentication and Profile Management
 
@@ -80,8 +71,6 @@ Offline Functionality
 
 ### Tech Stack
 
-List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations.
-
 - React
 - MongoDB
 - Express
@@ -109,15 +98,11 @@ Deployment
 
 ### APIs
 
-List any external sources of data that will be used in your app.
-
 - No external APIs will be used for the first sprint
 - https://developer.apple.com/documentation/mapkitjs/mapkit/addressfilter
+- https://github.com/apple/turicreate
 
 ### Sitemap
-
-List the pages of your app with brief descriptions. You can show this visually, or write it out.
-
 
 ## 1. Home Page
 Immediate trail discovery based on user input and location.
@@ -182,8 +167,6 @@ User Flow:
 
 ### Mockups
 
-Provide visuals of your app's screens. You can use pictures of hand-drawn sketches, or wireframing tools like Figma.
-
 
 #### Home Page
 page 1 
@@ -198,8 +181,6 @@ page 3
 page 4 
 
 ### Data
-
-Describe your data and the relationships between the data points. You can show this visually using diagrams, or write it out. 
 
 Database: 
 Users
@@ -270,8 +251,6 @@ Photos
 
 
 ### Endpoints
-
-List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
 
 
 ## 1. User Authentication
@@ -498,10 +477,89 @@ Example Response:
 
 ## Roadmap
 
-Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation working back from the capstone due date. 
+## Week 1
+
+### Day 1: Setup and Initial Development
+- Create client
+  - Set up React project with routes and boilerplate pages (Home, Trail Discovery, Trail Details, User Profile)
+  - Set up state management (Context API or Redux)
+- Create server
+  - Set up Express project with routing and placeholder 200 responses for main endpoints
+- Set up database
+  - Create MongoDB Atlas cluster or set up local MongoDB
+  - Implement database connection in server
+- Synthetic data 
+  - Gather sample data for 20 hiking trails in two different locations
+  - Create seed script with sample trail data
+  - Implement basic geospatial indexing for trail locations
+
+### Day 2-3: Core Feature Development
+- Feature: Trail Discovery
+  - Implement trail discovery page with location and preference input form
+  - Create POST /api/trails/discover endpoint with basic recommendation logic
+  - Implement results display on client
+- Feature: View Trail Details
+  - Implement trail details page
+  - Create GET /api/trails/:trail_id endpoint
+  - Display trail information, including map snippet
+
+### Day 4-6: User Features and Authentication
+- Feature: Create Account
+  - Implement register page and form
+  - Create POST /api/auth/register endpoint
+- Feature: Login
+  - Implement login page and form
+  - Create POST /api/auth/login endpoint
+- Implement JWT authentication
+  - Server: Generate and verify JWT tokens
+  - Client: Store JWT in local storage, include in API calls
+- Update protected endpoints to require authentication
+
+### Day 7-9: User Interaction Features
+- Feature: Save User Preferences
+  - Add preference input to trail discovery page
+  - Create POST /api/users/preferences endpoint
+  - Integrate preferences into trail recommendations
+- Feature: Rate and Review Trails
+  - Add rating and review form to trail details page
+  - Create POST /api/trails/:trail_id/reviews endpoint
+  - Update trail details page to display ratings and reviews
+
+### Day 10: User Profile and History
+- Feature: User Profile
+  - Implement user profile page
+  - Create GET /api/users/:user_id/profile endpoint
+  - Display user info, hiking history, and stats
+
+### Day 11: Enhancements and Polish
+- Improve UI/UX across all pages
+- Implement responsive design for mobile web
+- Add loading states and error handling
+- Optimize performance (e.g., lazy loading, memoization)
+
+### Day 12: Testing and Bug Fixes
+- Conduct thorough testing of all features
+- Fix any identified bugs
+- Perform cross-browser testing
+
+### Day 13: Deployment and Final Touches
+- Deploy client and server to production environments (e.g., Heroku, Netlify)
+- Set up continuous deployment for both client and server
+- Final testing in production environment
+
+### Day 14: Documentation
+- Write API documentation
+
+## Demo Day
+- Present Hike-yo-way project
+- Demonstrate key features
+- Discuss challenges and future enhancements
 
 ---
 
 ## Future Implementations
 Your project will be marked based on what you committed to in the above document. Here, you can list any additional features you may complete after the MVP of your application is built, or if you have extra time before the Capstone due date.
+
+- Data Cleaning
+- Explore other ML model
 
