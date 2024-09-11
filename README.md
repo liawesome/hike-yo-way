@@ -186,11 +186,11 @@ Database:
 Users
 Trails
 Reviews
-Hikes (completed hikes by users)
+Hikes
 Photos
 
 
-// Users
+ Users
 ```
 {
   _id: ObjectId,
@@ -215,7 +215,7 @@ Photos
 }
 ```
 
-//Trials
+Trials
 ```
 {
   _id: ObjectId,
