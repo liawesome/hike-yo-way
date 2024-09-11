@@ -165,7 +165,6 @@ User Flow:
 
 ### Mockups
 
-
 #### Home Page
 page 1 
 
@@ -177,6 +176,7 @@ page 3
 
 #### User Profile Page
 page 4 
+
 
 ### Data
 
