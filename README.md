@@ -1,6 +1,4 @@
-# Project Title
-
-Hike-yo-way
+# Hike-yo-way
 
 ## Overview
 
