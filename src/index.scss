@@ -1,0 +1,21 @@
+@use "./styles/variables" as *;
+
+* {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  background-color: $background-color;
+  color: $primary-text;
+}
+
+ul {
+  list-style-type: none;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+h2 {
+}
