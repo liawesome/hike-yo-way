@@ -1,0 +1,20 @@
+@use "./styles/variables" as *;
+
+.home-page {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  height: calc(100vh - 40px);
+
+  &__slider {
+    flex: 1;
+  }
+
+  &__right {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 20px;
+  }
+}
