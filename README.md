@@ -49,6 +49,10 @@ Server libraries:
 
 -https://github.com/ollama/ollama
 
+### mock up 
+<img width="882" alt="Screenshot" src="https://github.com/user-attachments/assets/7b3df5cf-5385-49f5-9385-85bd9c776dab">
+
+
 ### Sitemap
 
 ## 1. Home Page
