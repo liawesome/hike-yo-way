@@ -3,10 +3,11 @@ import {useState, useEffect} from 'react';
 import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 import { GiStoneStack } from "react-icons/gi";
 import { PiShootingStarFill } from "react-icons/pi";
-
 import { IoEarth } from "react-icons/io5";
 
-export default function Slider({ data }) {
+const baseURL = import.meta.env.VITE_API_URL;
+
+function Slider({ data }) {
   const [slide, setSlide] = useState(0);
   // const autoPlayTime= 50000;
 
@@ -25,9 +26,9 @@ export default function Slider({ data }) {
 
   //   return ()=>clearInterval(slideInterval);
   // }, [nextSlide]);
-
   return (
     <div className="carousel">
+      
       {data.map((item, idx) => (
         <div
         key={idx}
@@ -38,10 +39,10 @@ export default function Slider({ data }) {
             <div className="carousel__review">
               <div className="rating">
                 <PiShootingStarFill />
-                <p>{item.rating} / 5.00</p>
+                <p>{item.avg_rating} / 5.00</p>
               </div>
               <div className="carousel__reviewers">
-                {item.reviewers.slice(0, 3).map((reviewer, index) => (
+                {item.reviews.slice(0, 3).map((reviewer, index) => (
                   <div key={index} className="reviewer-avatar">
                     <img
                       src={`https://i.pravatar.cc/150?u=${reviewer.name}`}
@@ -49,16 +50,16 @@ export default function Slider({ data }) {
                     />
                   </div>
                 ))}
-                {item.reviewers.length > 3 && (
+                {item.reviews.length > 3 && (
                   <div className="reviewer-avatar additional">
-                    +{item.reviewers.length - 3}
+                    +{item.reviews.length - 3}
                   </div>
                 )}
               </div>
               </div>
             </div>
             <div className="carousel__visit">
-              <h2>{item.name}, {item.place}</h2>
+              <h2>{item.name}, {item.location}</h2>
               <div className="carousel__desc">
                 <div className="difficulty">
                   <GiStoneStack /> 
@@ -70,7 +71,7 @@ export default function Slider({ data }) {
                 </div>
               </div>
               <div className="carousel__tags">
-                {item.type.map((tag, index)=>(
+                {item.features.map((tag, index)=>(
                   <button 
                     key={index}
                     className="carousel__tag"
@@ -82,8 +83,12 @@ export default function Slider({ data }) {
             </div>
           </div>
           <img
-            src={item.image}
+            src={baseURL + item.image}
             alt={item.name}
+            onError={(e) => {
+              e.target.onerror = null; 
+              e.target.src = '/placeholder-image.jpg';
+            }}
             className="carousel__image"
           />
       </div>
@@ -97,3 +102,4 @@ export default function Slider({ data }) {
 );
 };
 
+export default Slider;

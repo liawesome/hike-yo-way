@@ -1,4 +1,4 @@
-@use "./styles/variables" as *;
+@use "../../styles/variables" as *;
 
 .carousel {
   position: relative;
@@ -107,7 +107,7 @@
     padding-left: 40px;
 
     h2 {
-      font-size: 1.55rem;
+      font-size: 1.45rem;
       margin-bottom: 10px;
       color: #fdfcf7;
     }

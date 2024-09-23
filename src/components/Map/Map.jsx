@@ -1,12 +1,11 @@
 import "./Map.scss";
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from '@react-google-maps/api';
 import { useState, useEffect } from "react";
-import { BiExpandAlt } from "react-icons/bi";
 
 function Map({trailData}) {
     const { isLoaded, loadError } = useJsApiLoader({
         id: 'google-map-script',
-        // googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY
+        googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY
     });
 
     const [activeMarker, setActiveMarker] = useState(null);
@@ -42,13 +41,14 @@ function Map({trailData}) {
                 onLoad={handleOnLoad}
                 onClick={() => handleMarkerClick(null)}
             >
-                {trailData.map(({id, name, position}) => (
+                {trailData.map(({_id, name, position}) => (
                     <Marker 
-                        key={id}
+                        key={_id}
                         position={position}
-                        onClick={() => handleMarkerClick(id)}
+                        onClick={() => handleMarkerClick(_id)}
+                        
                     >
-                        {activeMarker === id ? (
+                        {activeMarker === _id ? (
                             <InfoWindow onCloseClick={() => setActiveMarker(null)}>
                                 <h3>{name}</h3>
                             </InfoWindow>
