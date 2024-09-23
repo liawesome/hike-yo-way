@@ -1,10 +1,17 @@
 @use "../../styles/variables" as *;
 
 .home-page {
-  display: flex;
-  gap: 20px;
-  padding: 30px;
-  height: calc(100vh - 40px);
+  // gap: 20px;
+  // padding: 30px;
+  // height: calc(100vh - 40px);
+
+  &__intro {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    height: 90vh;
+    // height: calc(90vh - 40px);
+  }
 
   &__slider {
     flex: 1;

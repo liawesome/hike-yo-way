@@ -9,7 +9,7 @@ const baseURL = import.meta.env.VITE_API_URL;
 
 function Slider({ data }) {
   const [slide, setSlide] = useState(0);
-  // const autoPlayTime= 50000;
+  const autoPlayTime= 8000;
 
   const nextSlide = ()=>{
     setSlide(slide===data.length -1 ? 0: slide+1)
@@ -26,6 +26,7 @@ function Slider({ data }) {
 
   //   return ()=>clearInterval(slideInterval);
   // }, [nextSlide]);
+  
   return (
     <div className="carousel">
       

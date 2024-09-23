@@ -9,7 +9,6 @@ function Header(){
     const spans = document.querySelectorAll('.word span');
     const [isModalVisible, setModalVisible] = useState(false);
     
-
     spans.forEach((span, idx) => {
         span.addEventListener('click', (e) => {
             e.target.classList.add('active');
@@ -31,9 +30,6 @@ function Header(){
     const closeModal=()=>{
         setModalVisible(false);
     }
-
-
-    
 
     const customStyles = {
         content: {
@@ -69,11 +65,6 @@ function Header(){
                     <li>
                         <Link to="/mylist" className="navbar__link">
                             <h2>My List</h2>
-                            {/* <button 
-                                className="navbar__btn"
-                            >
-                            My List
-                            </button> */}
                         </Link>
                     </li>
                     <li>

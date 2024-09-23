@@ -1,53 +1,58 @@
-.search-input-container {
-  max-width: 48rem;
-  margin: 0 auto;
-  padding: 1rem;
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
 
-  .search-input-wrapper {
-    position: relative;
+.search-input {
+  padding: 0 1rem;
+  max-width: 48rem;
+  @include flex-direction;
+
+  h2 {
     display: flex;
-    align-items: center;
+    justify-content: flex-start;
   }
 
-  .search-input {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__input {
     width: 100%;
     padding: 0.75rem 3rem;
-    border-radius: 9999px;
+    font-weight: 500;
+    border-radius: 1.563rem;
     background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0.1, 0.1, 0.3);
     border: none;
-    transition: box-shadow 0.3s ease;
 
     &:focus {
       outline: none;
-      box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
     }
   }
 
-  .icon-button {
+  .icon-btn {
     position: absolute;
     padding: 0.5rem;
     border-radius: 50%;
-    background-color: #e2e8f0;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: #cbd5e0;
+      background-color: $hover-color;
     }
 
     svg {
       display: block;
-      color: #4a5568;
+      color: $button-dark;
     }
   }
 
-  .add-files-button {
+  .add {
     left: 0.5rem;
   }
 
-  .submit-button {
+  .submit {
     right: 0.5rem;
   }
 }
