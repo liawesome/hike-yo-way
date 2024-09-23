@@ -68,7 +68,7 @@ User Flow:
 - User can tap on a trail to view details or choose to see more options
 
 
-## 2. Trail Details Page
+## 2. Trail Details Page (in future)
 Comprehensive information about a selected trail.
 
 Key Features:
@@ -79,12 +79,6 @@ Key Features:
 - User ratings and top reviews
 - "Start Hike" button
 - Option to save trail or share
-
-
-### Mockups
-
-#### Home Page
-page 1 
 
 
 ### Data
