@@ -4,10 +4,23 @@ import { useState } from "react";
 import { LuUser } from "react-icons/lu";
 import Modal from 'react-modal';
 
-
+// adjust the hover effect 
 function Header(){
-    const [isModalVisible, setModalVisible] = useState(false);
     const spans = document.querySelectorAll('.word span');
+    const [isModalVisible, setModalVisible] = useState(false);
+    
+    spans.forEach((span, idx) => {
+        span.addEventListener('click', (e) => {
+            e.target.classList.add('active');
+        });
+        span.addEventListener('animationend', (e) => {
+            e.target.classList.remove('active');
+        });
+        
+        setTimeout(() => {
+            span.classList.add('active');
+        }, 750 * (idx+1))
+        });
 
 
     const openModal = ()=>{
@@ -17,20 +30,6 @@ function Header(){
     const closeModal=()=>{
         setModalVisible(false);
     }
-
-
-    spans.forEach((span, idx) => {
-    span.addEventListener('click', (e) => {
-        e.target.classList.add('active');
-    });
-    span.addEventListener('animationend', (e) => {
-        e.target.classList.remove('active');
-    });
-    
-    setTimeout(() => {
-        span.classList.add('active');
-    }, 750 * (idx+1))
-    });
 
     const customStyles = {
         content: {
