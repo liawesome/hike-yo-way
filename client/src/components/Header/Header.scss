@@ -5,6 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 25px 40px;
 
   &__link {
     text-decoration: none;
@@ -26,17 +27,14 @@
   }
 
   &__user {
-    width: 35px;
-    height: 35px;
-
+    width: 45px;
+    height: 45px;
     border: 2px solid rgba($button, 0.5);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 1.25rem;
     margin-right: 2rem;
 
     svg {
@@ -48,20 +46,6 @@
       border: 2px solid $button;
     }
   }
-
-  // &__btn {
-  //   cursor: pointer;
-  //   padding: 5px 15px;
-  //   margin-left: 10px;
-  //   margin-bottom: 10px;
-
-  //   :focus {
-  //     background-color: rgba(255, 255, 255, 0.2);
-  //     border-radius: 20px;
-  //     // color: white;
-  //     border: none;
-  //   }
-  // }
 }
 
 .word {

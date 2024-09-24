@@ -14,20 +14,6 @@ function Search() {
   const [sessionId, setSessionId] = useState('');
   const [showTrailContent, setShowTrailContent] = useState(false);
 
-  // const trailData = [
-  //   {
-  //     id: 1,
-  //     name: "Serene Forest Path",
-  //     location: "Whispering Pines National Park",
-  //     image: "/api/placeholder/400/300"
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Challenging Mountain Trek",
-  //     location: "Rocky Peaks Wilderness Area",
-  //     image: "/api/placeholder/400/300"
-  //   }
-  // ];
   useEffect(() => {
     setSessionId(uuidv4());
   }, []);
@@ -38,10 +24,11 @@ function Search() {
     if(!input.trim()) return;
 
     try {
-      const {data} = await axios.post(getPath('api/chat/ask-query'),  { query: input, sessionId});
+      const {data} = await axios.post('http://localhost:3000/api/chat/ask-query',  { query: input, sessionId});
       setResponse(data);
       setInput('');
       setShowTrailContent(true);
+      console.log(response);
     } catch (error) {
       console.error('Error getting response:', error);
   }
@@ -51,9 +38,6 @@ function Search() {
    
     <div className="search-input">
       <h2>Describe your current mood...</h2>
-      {/* {Serene, Challenging, Mystical, Invigorating, TranquilAdventurous}
-      <button className="search-input__tag">
-      </button> */} 
       <form className="search-input__wrapper" onSubmit = {handleSubmit}>
         <button className="icon-btn add">
           <GoPlusCircle size={20} />
@@ -69,7 +53,7 @@ function Search() {
           <LuArrowUpCircle size={20} />
         </button>
       </form>
-      {showTrailContent && <TrailCard trailData={response} />}
+      {/* {showTrailContent && <TrailCard trailData={response} />} */}
     </div>
  
   )

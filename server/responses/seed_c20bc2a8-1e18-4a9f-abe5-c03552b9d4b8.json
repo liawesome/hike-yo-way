@@ -1,0 +1,55 @@
+[
+  {
+    "role": "user",
+    "content": "I want to see peak views"
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "name": "Skyline Trail",
+        "location": "Mount Rainier National Park, Washington",
+        "image": "https://www.nationalgeographic.com/wp-content/uploads/2018/09/Mount-Rainier-National-Park-Washington-State-GettyImages-1234567.jpg",
+        "numberOfVisitors": 1500,
+        "position": {
+          "lat": 47.5858,
+          "lng": -122.7903
+        },
+        "difficulty": "Moderate",
+        "length": "6.2 miles",
+        "elevation_gain": "2,300 feet",
+        "estimated_time": "4-6 hours",
+        "avg_rating": 4.5,
+        "features": [
+          "waterfall",
+          "mountain views",
+          "photography",
+          "hiking trails"
+        ],
+        "description": "Experience breathtaking panoramic views of Mount Rainier and surrounding peaks."
+      },
+      {
+        "name": "Cascade Pass Trail",
+        "location": "Olympic National Park, Washington",
+        "image": "https://www.nps.gov/olym/planyourvisit/cascade-pass.htm",
+        "numberOfVisitors": 2000,
+        "position": {
+          "lat": 47.8917,
+          "lng": -123.6457
+        },
+        "difficulty": "Moderate",
+        "length": "10 miles",
+        "elevation_gain": "1,800 feet",
+        "estimated_time": "6-8 hours",
+        "avg_rating": 4.2,
+        "features": [
+          "forest",
+          "mountain views",
+          "photography",
+          "hiking trails"
+        ],
+        "description": "Immerse yourself in the beauty of ancient forests and alpine meadows with stunning mountain vistas."
+      }
+    ]
+  }
+]

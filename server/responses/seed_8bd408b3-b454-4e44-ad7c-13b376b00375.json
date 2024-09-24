@@ -1,0 +1,55 @@
+[
+  {
+    "role": "user",
+    "content": "I would like to see Chipmunk in mountains"
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "name": "Skyline Trail",
+        "location": "Mount Rainier National Park, Washington",
+        "image": "https://www.nps.gov/mora/planyourvisit/images/skyline-trail.jpg",
+        "numberOfVisitors": 1200,
+        "position": {
+          "lat": 47.5983,
+          "lng": -122.6467
+        },
+        "difficulty": "Moderate",
+        "length": "7 miles",
+        "elevation_gain": "1,500 feet",
+        "estimated_time": "4-6 hours",
+        "avg_rating": 4.3,
+        "features": [
+          "Ancient forests",
+          "Misty mountains",
+          "Fall foliage",
+          "Photography opportunities"
+        ],
+        "description": "Hike along Skyline Trail for panoramic views of Mount Rainier and lush fall colors."
+      },
+      {
+        "name": "North Cascades National Park Loop",
+        "location": "North Cascades National Park, Washington",
+        "image": "https://www.nps.gov/noca/planyourvisit/images/north-cascades-loop.jpg",
+        "numberOfVisitors": 1500,
+        "position": {
+          "lat": 48.7239,
+          "lng": -122.0667
+        },
+        "difficulty": "Moderate",
+        "length": "10 miles",
+        "elevation_gain": "1,500 feet",
+        "estimated_time": "4-6 hours",
+        "avg_rating": 4.5,
+        "features": [
+          "Ancient forests",
+          "Misty mountains",
+          "Fall foliage",
+          "Photography opportunities"
+        ],
+        "description": "Explore the North Cascades National Park Loop for breathtaking views of cascading waterfalls and vibrant fall colors."
+      }
+    ]
+  }
+]

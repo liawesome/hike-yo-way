@@ -64,11 +64,11 @@ function Slider({ data }) {
               <div className="carousel__desc">
                 <div className="difficulty">
                   <GiStoneStack /> 
-                  <p>{item.difficulty}</p>
+                  <h4>{item.difficulty}</h4>
                 </div>
                 <div className="visitor">
                   <IoEarth /> 
-                  <p>{item.numberOfVisitors} hikers</p>
+                  <h4>{item.numberOfVisitors} hikers</h4>
                 </div>
               </div>
               <div className="carousel__tags">
