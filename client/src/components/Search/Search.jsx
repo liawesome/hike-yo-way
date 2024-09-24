@@ -25,17 +25,17 @@ function Search() {
 
     try {
       const {data} = await axios.post('http://localhost:3000/api/chat/ask-query',  { query: input, sessionId});
-      setResponse(data);
+      // console.log(data.reply);
+      setResponse(data.reply);
       setInput('');
       setShowTrailContent(true);
-      console.log(response);
+      
     } catch (error) {
       console.error('Error getting response:', error);
   }
 }
 
   return (
-   
     <div className="search-input">
       <h2>Describe your current mood...</h2>
       <form className="search-input__wrapper" onSubmit = {handleSubmit}>
@@ -44,6 +44,8 @@ function Search() {
         </button>
         <input
           type="text"
+          name="search-input"
+          id="search-input"
           placeholder="I would like to explore ... in ..."
           className="search-input__input"
           value = {input} 
@@ -53,7 +55,7 @@ function Search() {
           <LuArrowUpCircle size={20} />
         </button>
       </form>
-      {/* {showTrailContent && <TrailCard trailData={response} />} */}
+      {showTrailContent && <TrailCard trailData={response} />}
     </div>
  
   )
