@@ -40,11 +40,11 @@ router.post('/ask-query', async (req, res) => {
 
         const reply = response.message.content;
         const modifiedReply = parseResponseToJson(reply)
-        
-        messages.push({ role: 'assistant', content: modifiedReply });
-
-        await fs.writeFile(sessionFile, JSON.stringify(messages, null, 2))
+        console.log('We got the response!');
         res.json({reply: modifiedReply});
+        messages.push({ role: 'assistant', content: modifiedReply });
+        await fs.writeFile(sessionFile, JSON.stringify(messages, null, 2))
+
     } catch (err) {
         console.error('Error processing query:', err);
         res.status(500).json({ error: 'Error processing query', details: err.message });
