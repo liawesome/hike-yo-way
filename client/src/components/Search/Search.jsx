@@ -10,6 +10,11 @@ import { MdOutlineFaceRetouchingNatural } from "react-icons/md";
 import { FaTree } from "react-icons/fa6";
 
 
+const LoadingAlert = ({ message }) => (
+  <div className="loading-alert">
+    <p>{message}</p>
+  </div>
+);
 
 function Search() {
 
@@ -17,6 +22,7 @@ function Search() {
   const [response, setResponse] = useState([]) // model response
   const [sessionId, setSessionId] = useState('');
   const [showTrailContent, setShowTrailContent] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setSessionId(uuidv4());
@@ -26,22 +32,26 @@ function Search() {
     e.preventDefault();
 
     if(!input.trim()) return;
+    setIsLoading(true);
 
     try {
       const {data} = await axios.post('http://localhost:3000/api/chat/ask-query',  { query: input, sessionId});
+      console.log(data.reply)
       setResponse(data.reply);
       setInput('');
       setShowTrailContent(true);
       
     } catch (error) {
       console.error('Error getting response:', error);
+  } finally {
+    setIsLoading(false);
   }
 }
 
   return (
     <div className="search-input">
       <h2>Hi, Describe your current mood...</h2>
-      <form className="search-input__wrapper" onSubmit = {handleSubmit}>
+      <form className="search-input__wrapper" onSubmit = {handleSubmit} >
         <button className="icon-btn add">
           <GoPlusCircle size={20} />
         </button>
@@ -54,12 +64,14 @@ function Search() {
           value = {input} 
           onChange={(e)=> setInput(e.target.value)} // update the syntax
         />
-        <button className="icon-btn submit" >
+        <button className="icon-btn submit" disabled={isLoading} >
           <LuArrowUpCircle size={20} />
         </button>
       </form>
+      {isLoading && (<LoadingAlert message="Searching for the perfect trail... Please wait." />
+      )}
       {/* show some example  */}
-      <div className="search-input__example">
+      {!showTrailContent && <div className="search-input__example" >
         <div className="search-input__example-a">
           <MdOutlineFaceRetouchingNatural className="example1"/>
           <p>I am looking for a moderate trail in the Pacific Northwest with a mystical forest feel for an autumn hike. </p>
@@ -69,7 +81,7 @@ function Search() {
           <p>I need a break. Can you suggest a peaceful hike in Ontario that’s around 3 hours?
              Somewhere I can just clear my head </p>
         </div>
-      </div>
+      </div>}
       {showTrailContent && <TrailCard trailData={response} />}
     </div>
  
