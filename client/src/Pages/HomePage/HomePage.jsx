@@ -34,7 +34,7 @@ function HomePage(){
                 </div>
             </div>
             <div className="home-page__search">
-                <Search />
+                <Search className="home-page"/>
             </div>
             
         </div>

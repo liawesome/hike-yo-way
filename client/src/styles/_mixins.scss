@@ -36,14 +36,20 @@
 
 @mixin button {
   align-items: center;
-  padding: 0.75rem 1.5rem;
+  padding: 0.35rem 1.5rem;
   border: none;
   border-radius: 2rem;
   color: $button-dark;
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
+
+  @include desktop {
+    font-size: 1.55rem;
+    padding: 0.75rem 1.25rem;
+    font-weight: 400;
+  }
 
   &:hover {
     background-color: darken($background-color, 10%);

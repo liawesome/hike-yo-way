@@ -3,44 +3,104 @@
 
 .card {
   text-align: left;
-  height: 50vh;
   justify-content: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   @include flex-direction;
 
   background: linear-gradient(135deg, #bce7b7 0%, #bfb5ff 100%);
   border-radius: 25px;
-  padding: 0 20px;
+  padding: 0 10px;
+
+  @include tablet {
+    // padding: 0 15px;
+    padding: 25px;
+  }
+
+  @include desktop {
+    // height: 50vh;
+    // padding: 0 20px;
+    height: auto;
+    max-height: 40vh;
+    padding: 30px;
+  }
 
   &__wrapper {
-    margin-left: 20px;
     justify-content: space-around;
     display: flex;
     flex-direction: column;
+    padding: 20px 0;
+    width: 100%;
+
+    @include tablet {
+      margin-left: 15px;
+      padding: 10px 0;
+    }
+
+    @include desktop {
+      margin-left: 20px;
+      padding: 0;
+    }
   }
 
   &__title {
-    font-size: 2.75rem;
+    font-size: 1.25rem;
     font-weight: bold;
-    margin-bottom: 1rem;
     color: $primary-text;
-    max-width: 70%;
+    margin-bottom: 0.5rem;
+
+    @include tablet {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    // @include desktop {
+    //   font-size: 3.25rem;
+    //   line-height: 3rem;
+    //   max-width: 80%;
+    // }
+    @include desktop {
+      font-size: 2.5rem;
+      line-height: 2.75rem;
+      margin-bottom: 1rem;
+      max-width: 100%;
+    }
   }
 
   &__subtitle {
-    font-size: 1.55rem;
+    font-size: 0.85rem;
     font-weight: 400;
-    margin-bottom: 1.5rem;
     color: $primary-text;
-    max-width: 90%;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      font-size: 1.2rem;
+      margin-bottom: 1.25rem;
+    }
+
+    // @include desktop {
+    //   font-size: 1.65rem;
+    //   padding: 10px 0;
+    //   max-width: 90%;
+    // }
+
+    @include desktop {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      max-width: 100%;
+    }
   }
 
   &__btn {
     display: inline-flex;
+    width: 100%;
     @include button;
 
     svg {
       margin-left: 0.5rem;
+    }
+
+    @include tablet {
+      width: auto;
     }
   }
 }

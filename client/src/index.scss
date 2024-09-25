@@ -1,4 +1,5 @@
 @use "./styles/variables" as *;
+@use "./styles/mixins" as *;
 
 #root {
   // margin: 0 auto;
@@ -29,7 +30,10 @@ ul {
 
 h1 {
   font-size: 2.75rem;
-  line-height: 2.5rem;
+  line-height: 1.75rem;
+  @include desktop {
+    line-height: 2.5rem;
+  }
 }
 
 h2 {

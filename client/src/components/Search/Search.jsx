@@ -6,6 +6,10 @@ import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import getPath from "../../utils/loadAPI"
 import TrailCard from "../TrailCard/TrailCard"
+import { MdOutlineFaceRetouchingNatural } from "react-icons/md";
+import { FaTree } from "react-icons/fa6";
+
+
 
 function Search() {
 
@@ -25,7 +29,6 @@ function Search() {
 
     try {
       const {data} = await axios.post('http://localhost:3000/api/chat/ask-query',  { query: input, sessionId});
-      // console.log(data.reply);
       setResponse(data.reply);
       setInput('');
       setShowTrailContent(true);
@@ -37,7 +40,7 @@ function Search() {
 
   return (
     <div className="search-input">
-      <h2>Describe your current mood...</h2>
+      <h2>Hi, Describe your current mood...</h2>
       <form className="search-input__wrapper" onSubmit = {handleSubmit}>
         <button className="icon-btn add">
           <GoPlusCircle size={20} />
@@ -55,6 +58,18 @@ function Search() {
           <LuArrowUpCircle size={20} />
         </button>
       </form>
+      {/* show some example  */}
+      <div className="search-input__example">
+        <div className="search-input__example-a">
+          <MdOutlineFaceRetouchingNatural className="example1"/>
+          <p>I am looking for a moderate trail in the Pacific Northwest with a mystical forest feel for an autumn hike. </p>
+        </div>
+        <div className="search-input__example-b">
+          <FaTree className="example2"/>
+          <p>I need a break. Can you suggest a peaceful hike in Ontario that’s around 3 hours?
+             Somewhere I can just clear my head </p>
+        </div>
+      </div>
       {showTrailContent && <TrailCard trailData={response} />}
     </div>
  

@@ -52,7 +52,8 @@ function Header(){
                         <span>k</span>
                         <span>e</span>
                         <span>&nbsp;</span>
-                        <span>U</span>
+                        <span>Y</span>
+                        <span>o</span>
                         <span>&nbsp;</span>
                         <span>W</span>
                         <span>a</span>
