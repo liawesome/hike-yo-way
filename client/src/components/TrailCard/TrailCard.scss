@@ -41,9 +41,9 @@
   }
 
   &__map {
-    @include button;
     background-color: $button-dark;
     color: white;
+    @include button;
 
     &:hover {
       background-color: $additional;
