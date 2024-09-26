@@ -50,7 +50,7 @@ function Search() {
 
   return (
     <div className="search-input">
-      <h2>Hi, Describe your current mood...</h2>
+      <h2>Hi, What kind of hike are you looking for?</h2>
       <form className="search-input__wrapper" onSubmit = {handleSubmit} >
         <button className="icon-btn add">
           <GoPlusCircle size={20} />
