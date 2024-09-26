@@ -1,0 +1,24 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+.home-page {
+  padding: 0 50px;
+
+  &__intro {
+    display: flex;
+    gap: 20px;
+    padding: 50px 80px 0;
+    height: 80vh;
+  }
+
+  &__slider {
+    flex: 1;
+  }
+
+  &__right {
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 20px;
+  }
+}

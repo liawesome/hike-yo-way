@@ -1,0 +1,41 @@
+@use "./styles/variables" as *;
+@use "./styles/mixins" as *;
+
+#root {
+  // margin: 0 auto;
+  // padding: 2rem;
+  // text-align: center;
+}
+
+* {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+}
+#map {
+  height: 70%;
+}
+
+body {
+  background-color: $background-color;
+  color: $primary-text;
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px 40px;
+}
+
+ul {
+  list-style-type: none;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+h1 {
+  font-size: 2.75rem;
+  line-height: 1.75rem;
+  @include desktop {
+    line-height: 2.5rem;
+  }
+}
+
+h2 {
+  color: $primary-text;
+}

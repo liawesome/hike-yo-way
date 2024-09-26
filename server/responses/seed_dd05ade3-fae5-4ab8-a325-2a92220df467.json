@@ -1,0 +1,49 @@
+[
+  {
+    "role": "user",
+    "content": "I would like to see some peak in la"
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "name": "Mount Tamalpais State Park Trail",
+        "location": "California, USA",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Mount_Tamalpais_State_Park.jpg/1200px-Mount_Tamalpais_State_Park.jpg",
+        "numberOfVisitors": 3800,
+        "position": {
+          "lat": 37.9476,
+          "lng": -122.5079
+        },
+        "difficulty": "Moderate",
+        "length": "7.6 miles",
+        "elevation_gain": "1,000 ft",
+        "estimated_time": "4-6 hours",
+        "avg_rating": 4.3,
+        "features": [
+          "Misty forests, panoramic views"
+        ],
+        "description": "Explore the ancient redwood and Douglas fir forests of Mount Tamalpais for breathtaking autumn foliage."
+      },
+      {
+        "name": "Mount Diablo State Park Trail",
+        "location": "California, USA",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Mount_Diablo_State_Park_trail.jpg/1200px-Mount_Diablo_State_Park_trail.jpg",
+        "numberOfVisitors": 7500,
+        "position": {
+          "lat": 38.9467,
+          "lng": -121.7788
+        },
+        "difficulty": "Moderate",
+        "length": "4.1 miles",
+        "elevation_gain": "1,000 ft",
+        "estimated_time": "2-3 hours",
+        "avg_rating": 4.5,
+        "features": [
+          "Mist, panoramic views"
+        ],
+        "description": "Hike the challenging yet rewarding Mount Diablo for stunning fall colors and panoramic vistas of the Bay Area."
+      }
+    ]
+  }
+]

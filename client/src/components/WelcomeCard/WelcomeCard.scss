@@ -1,0 +1,84 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.card {
+  text-align: left;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  @include flex-direction;
+
+  background: linear-gradient(135deg, #bce7b7 0%, #bfb5ff 100%);
+  border-radius: 25px;
+  padding: 0 10px;
+
+  @include tablet {
+  }
+
+  @include desktop {
+    height: auto;
+    max-height: 40vh;
+    padding: 30px;
+  }
+
+  &__wrapper {
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    width: 100%;
+
+    @include tablet {
+      margin-left: 15px;
+      padding: 10px 0;
+    }
+
+    @include desktop {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: $primary-text;
+    margin-bottom: 0.5rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    @include desktop {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      margin-bottom: 1rem;
+      max-width: 80%;
+    }
+  }
+
+  &__subtitle {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: $primary-text;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      font-size: 1rem;
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    width: 100%;
+    @include button;
+
+    svg {
+      margin-left: 0.5rem;
+    }
+
+    @include tablet {
+      width: auto;
+    }
+  }
+}

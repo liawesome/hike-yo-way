@@ -1,0 +1,111 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.search-input {
+  width: 100%;
+  // max-width: 100%;
+  padding: 0 2rem;
+  @include flex-direction;
+
+  h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.75rem 3rem;
+    border-radius: 24px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0.1, 0.1, 0.3);
+    border: 1px solid #dfe1e5;
+
+    &:focus {
+      outline: none;
+      border-color: rgba(223, 225, 229, 0);
+    }
+
+    @include tablet {
+      font-size: 1.125rem;
+    }
+  }
+
+  .icon-btn {
+    position: absolute;
+    padding: 0.5rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    svg {
+      display: block;
+      color: #5f6368;
+      width: 1.25rem;
+      height: 1.25rem;
+
+      @include tablet {
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+    }
+  }
+
+  .add {
+    left: 0.5rem;
+  }
+
+  .submit {
+    right: 0.5rem;
+  }
+
+  &__example {
+    @include flex-direction(row);
+    padding: 20px;
+    gap: 20px;
+    justify-content: center;
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+
+    &-a,
+    &-b {
+      @include flex-direction;
+      border-radius: 24px;
+      background: rgba($additional, 0.1);
+      gap: 20px;
+
+      &:hover {
+        background-color: rgba($review-color, 0.2);
+      }
+    }
+  }
+}
+
+.loading-alert {
+  background-color: #f0f0f0;
+  border: 1px solid $secondary-color;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
