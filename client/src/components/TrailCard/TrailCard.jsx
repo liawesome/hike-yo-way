@@ -3,19 +3,33 @@ import {useState} from "react";
 import { LuHeartPulse } from "react-icons/lu";
 import { BiSolidMapPin } from "react-icons/bi";
 import { RiEmotionNormalLine } from "react-icons/ri";
-
+import DynamicImage from './DynamicImage';
 
 function TrailCard({ trailData }){
   // setting like/dislikes for user
-  const [likes, setLikes] = useState(new Array(trailData.length).fill(false));
-  const [dislikes, setDislikes] = useState(new Array(trailData.length).fill(false));
+  const [likes, setLikes] = useState(false);
+  const [dislikes, setDislikes] = useState(false);
+  
+  const [openMap, setOpenMap] = useState(false);
 
+
+  // add map modal 
+  const handleOnClickMap = () => {
+      setOpenMap(true);
+  }
+
+  console.log("trail.image", JSON.stringify(trailData))
 
   return (
        <div className="trail-card">
         {trailData.map((trail, index) => (
           <div key={index} className="trail-card__wrapper">
-            <img src={trail.image} alt={trail.name} className="trail-card__image" />
+            {/* <img src={trail.image} alt={trail.name} className="trail-card__image" /> */}
+            <DynamicImage 
+              shortUrl={trail.image} 
+              alt={trail.name} 
+              className="trail-card__image" 
+            />
             <div className="trail-card__content">
               <h2 className="trail-card__title">{trail.name}</h2>
               <p className="trail-card__location">{trail.location}</p>
