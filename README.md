@@ -50,7 +50,8 @@ Server libraries:
 -https://github.com/ollama/ollama
 
 ## demo 
-![alt text](https://github.com/liawesome/hike-yo-way/homepage.png)
+<img src="https://github.com/liawesome/hike-yo-way/blob/bf4d58ac36a79cd6118a48759a5fc149e5ae6b4c/homepage.png" alt="Description" width="700" height="600">
+
 
 
 
