@@ -49,4 +49,8 @@ Server libraries:
 
 -https://github.com/ollama/ollama
 
+## demo 
+![alt text](https://github.com/liawesome/hike-yo-way/homepage.png)
+
+
 
